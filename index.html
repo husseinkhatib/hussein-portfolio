@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hussein — Senior Full-Stack Developer & Team Lead</title>
+<meta name="description" content="Senior full-stack developer and team lead in Beirut. 10+ years building HR, payroll, insurance, and e-invoicing systems for Lebanon and the Gulf.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14201A;
+    --bg:#EFF2EE;
+    --cedar:#1E4D32;
+    --cedar-soft:#2C6A45;
+    --copper:#B4561F;
+    --paper:#FFFFFF;
+    --line:#C9D2C8;
+    --muted:#5A6A5E;
+    --max:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:17px;
+  }
+  a{color:var(--cedar)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--copper);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  /* ---------- header ---------- */
+  header{border-bottom:1px solid var(--line)}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+  .nav .brand{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-.02em;font-size:1.05rem;text-decoration:none;color:var(--ink)}
+  .nav ul{display:flex;gap:26px;list-style:none}
+  .nav ul a{font-family:'IBM Plex Mono',monospace;font-size:.8rem;text-decoration:none;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .nav ul a:hover{color:var(--cedar)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:84px 0 56px}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--copper);margin-bottom:18px}
+  h1{
+    font-family:'Archivo',sans-serif;font-weight:800;
+    font-size:clamp(2.4rem,6vw,4.4rem);
+    line-height:1.02;letter-spacing:-.03em;max-width:18ch;
+  }
+  h1 .accent{color:var(--cedar)}
+  .hero p.lede{margin-top:24px;max-width:58ch;font-size:1.1rem;color:var(--muted)}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .meta span{
+    font-family:'IBM Plex Mono',monospace;font-size:.78rem;
+    border:1px solid var(--line);background:var(--paper);
+    padding:6px 12px;border-radius:999px;color:var(--ink)
+  }
+
+  /* ---------- diagram ---------- */
+  .diagram-section{padding:30px 0 70px}
+  .diagram-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px;overflow-x:auto}
+  .diagram-card h2{font-family:'IBM Plex Mono',monospace;font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  svg{display:block;min-width:720px;width:100%;height:auto}
+  .node rect{fill:var(--bg);stroke:var(--cedar);stroke-width:1.5;rx:8}
+  .node.integration rect{stroke:var(--copper);stroke-dasharray:4 3}
+  .node text{font-family:'IBM Plex Mono',monospace;font-size:13px;fill:var(--ink)}
+  .node text.sub{font-size:10.5px;fill:var(--muted)}
+  .layer-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;fill:var(--copper);letter-spacing:.14em}
+  .flow{stroke:var(--cedar-soft);stroke-width:1.5;fill:none;marker-end:url(#arrow)}
+  @media (prefers-reduced-motion:no-preference){
+    .flow{stroke-dasharray:200;stroke-dashoffset:200;animation:draw 1.2s ease forwards .4s}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    .hero h1,.hero .lede,.hero .meta{opacity:0;transform:translateY(12px);animation:rise .6s ease forwards}
+    .hero .lede{animation-delay:.12s}.hero .meta{animation-delay:.22s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+
+  /* ---------- sections ---------- */
+  section{padding:64px 0}
+  .section-head{display:flex;align-items:baseline;gap:16px;margin-bottom:34px}
+  .section-head h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.7rem;letter-spacing:-.02em}
+  .section-head .rule{flex:1;height:1px;background:var(--line)}
+
+  /* projects */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s, transform .2s}
+  .card:hover{border-color:var(--cedar);transform:translateY(-3px)}
+  .card h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.12rem;letter-spacing:-.01em}
+  .card p{font-size:.95rem;color:var(--muted)}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
+  .tags span{font-family:'IBM Plex Mono',monospace;font-size:.7rem;background:var(--bg);border:1px solid var(--line);padding:3px 9px;border-radius:5px;color:var(--cedar)}
+
+  /* leadership */
+  .lead-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .lead-item{border-left:3px solid var(--cedar);padding:4px 0 4px 18px}
+  .lead-item h3{font-family:'Archivo',sans-serif;font-size:1.02rem;font-weight:700;margin-bottom:6px}
+  .lead-item p{font-size:.93rem;color:var(--muted)}
+
+  /* skills */
+  table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  th{font-family:'IBM Plex Mono',monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--copper);width:200px;font-weight:500}
+  td{font-family:'IBM Plex Mono',monospace;font-size:.86rem}
+
+  /* contact */
+  .contact{background:var(--cedar);color:#fff;border-radius:18px;padding:56px 40px;text-align:center}
+  .contact h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.02em}
+  .contact p{margin:14px auto 28px;max-width:48ch;color:#D7E4DA}
+  .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;font-size:.85rem;text-decoration:none;
+    padding:13px 26px;border-radius:8px;transition:opacity .2s
+  }
+  .btn.primary{background:var(--copper);color:#fff}
+  .btn.ghost{border:1px solid #6F9B7E;color:#fff}
+  .btn:hover{opacity:.85}
+
+  footer{padding:36px 0;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--muted)}
+
+  @media (max-width:640px){
+    .nav ul{display:none}
+    section{padding:46px 0}
+    th{width:120px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">HUSSEIN<span style="color:var(--copper)">.</span></a>
+    <ul>
+      <li><a href="#systems">Systems</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <p class="eyebrow">Beirut, Lebanon — Senior Full-Stack Developer &amp; Team Lead</p>
+    <h1>I build the systems <span class="accent">payroll runs on.</span></h1>
+    <p class="lede">For over a decade I've designed, shipped, and maintained the enterprise backbone for companies across Lebanon and the Gulf — HR &amp; payroll platforms, insurance brokerage systems, e-invoicing compliance, and the mobile apps employees use every day.</p>
+    <div class="meta">
+      <span>10+ years</span>
+      <span>Team lead × 4 devs</span>
+      <span>AR / EN / FR</span>
+      <span>React · Node · SQL</span>
+    </div>
+  </div>
+
+  <div class="wrap diagram-section">
+    <div class="diagram-card">
+      <h2>// The stack I run, end to end</h2>
+      <svg viewBox="0 0 900 330" role="img" aria-label="Architecture diagram: web and mobile clients connect to Node.js services and message queues, backed by SQL Anywhere, PostgreSQL and AWS S3, with integrations to Shopify, ZATCA and payment gateways.">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#2C6A45"/>
+          </marker>
+        </defs>
+
+        <text class="layer-label" x="20" y="28">CLIENTS</text>
+        <text class="layer-label" x="350" y="28">SERVICES</text>
+        <text class="layer-label" x="680" y="28">DATA</text>
+
+        <!-- clients -->
+        <g class="node">
+          <rect x="20" y="48" width="200" height="58" rx="8"/>
+          <text x="36" y="74">Web apps</text>
+          <text class="sub" x="36" y="92">React · Wijmo · TypeScript</text>
+        </g>
+        <g class="node">
+          <rect x="20" y="126" width="200" height="58" rx="8"/>
+          <text x="36" y="152">Mobile apps</text>
+          <text class="sub" x="36" y="170">React Native · Expo</text>
+        </g>
+
+        <!-- services -->
+        <g class="node">
+          <rect x="350" y="48" width="210" height="58" rx="8"/>
+          <text x="366" y="74">REST APIs</text>
+          <text class="sub" x="366" y="92">Node.js · versioned public APIs</text>
+        </g>
+        <g class="node">
+          <rect x="350" y="126" width="210" height="58" rx="8"/>
+          <text x="366" y="152">Async &amp; caching</text>
+          <text class="sub" x="366" y="170">RabbitMQ · Redis</text>
+        </g>
+
+        <!-- data -->
+        <g class="node">
+          <rect x="680" y="48" width="200" height="58" rx="8"/>
+          <text x="696" y="74">SQL Anywhere</text>
+          <text class="sub" x="696" y="92">payroll engine · procedures</text>
+        </g>
+        <g class="node">
+          <rect x="680" y="126" width="200" height="58" rx="8"/>
+          <text x="696" y="152">PostgreSQL · S3</text>
+          <text class="sub" x="696" y="170">cloud services · storage</text>
+        </g>
+
+        <!-- integrations -->
+        <g class="node integration">
+          <rect x="350" y="234" width="210" height="58" rx="8"/>
+          <text x="366" y="260">Integrations</text>
+          <text class="sub" x="366" y="278">Shopify · ZATCA · banking</text>
+        </g>
+
+        <!-- flows -->
+        <path class="flow" d="M220 77 H344"/>
+        <path class="flow" d="M220 155 H344"/>
+        <path class="flow" d="M560 77 H674"/>
+        <path class="flow" d="M560 155 H674"/>
+        <path class="flow" d="M455 184 V228"/>
+        <path class="flow" d="M560 263 H780 V190"/>
+      </svg>
+    </div>
+  </div>
+
+  <section id="systems" class="wrap">
+    <div class="section-head"><h2>Selected systems</h2><div class="rule"></div></div>
+    <div class="grid">
+      <article class="card">
+        <h3>HR Cloud &amp; payroll engine</h3>
+        <p>Full payroll platform with Lebanese NSSF contribution rules, progressive income-tax brackets, retroactive adjustments, and geolocation attendance — built on deep SQL Anywhere stored-procedure logic.</p>
+        <div class="tags"><span>SQL Anywhere</span><span>Node.js</span><span>React</span></div>
+      </article>
+      <article class="card">
+        <h3>HR self-service mobile app</h3>
+        <p>Employee-facing app for leave requests, approvals, and HR workflows. Shipped to the App Store and Google Play with push notifications, multilingual support, and OTA updates.</p>
+        <div class="tags"><span>React Native</span><span>Expo</span><span>TestFlight</span></div>
+      </article>
+      <article class="card">
+        <h3>ZATCA e-invoicing</h3>
+        <p>Saudi Arabia Phase 2 compliance: XML invoice generation, validation against KSA business rules, clearance and reporting flows for client deployments across the Gulf.</p>
+        <div class="tags"><span>Node.js</span><span>XML</span><span>KSA compliance</span></div>
+      </article>
+      <article class="card">
+        <h3>Shopify sync platform</h3>
+        <p>Backend service syncing products, variants, inventory, and orders between enterprise ERP systems and Shopify storefronts, with token management and webhook handling.</p>
+        <div class="tags"><span>Shopify API</span><span>Node.js</span><span>Webhooks</span></div>
+      </article>
+      <article class="card">
+        <h3>Insurance brokerage migration</h3>
+        <p>Leading the migration of a legacy PowerBuilder brokerage system to a modern React/Node.js cloud stack, including the migration of an entire JasperReports reporting suite.</p>
+        <div class="tags"><span>React</span><span>JasperReports</span><span>Legacy migration</span></div>
+      </article>
+      <article class="card">
+        <h3>Public API platform</h3>
+        <p>Versioned, documented REST APIs consumed by external partners — release management, backward compatibility, and client communication included.</p>
+        <div class="tags"><span>REST</span><span>Versioning</span><span>Docs</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="leadership" class="wrap">
+    <div class="section-head"><h2>How I lead</h2><div class="rule"></div></div>
+    <div class="lead-grid">
+      <div class="lead-item">
+        <h3>Team of four, shipping weekly</h3>
+        <p>Daily standups, weekly targets, and transparent performance tracking — structure that keeps a small team predictable.</p>
+      </div>
+      <div class="lead-item">
+        <h3>Code review culture</h3>
+        <p>Branch protection, PR standards, and reviews that teach rather than gatekeep.</p>
+      </div>
+      <div class="lead-item">
+        <h3>AI-assisted engineering</h3>
+        <p>Daily Claude Code user with custom skills for recurring tasks: SQL procedures, release notes, Jira planning.</p>
+      </div>
+      <div class="lead-item">
+        <h3>Client-facing delivery</h3>
+        <p>Direct communication with clients in Lebanon and KSA — in Arabic, English, or French, whichever the room speaks.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="wrap">
+    <div class="section-head"><h2>Stack</h2><div class="rule"></div></div>
+    <table>
+      <tr><th>Frontend</th><td>React · React Native (Expo) · TypeScript · Wijmo</td></tr>
+      <tr><th>Backend</th><td>Node.js · REST · RabbitMQ · Redis</td></tr>
+      <tr><th>Databases</th><td>SQL Anywhere / Sybase · PostgreSQL</td></tr>
+      <tr><th>Cloud &amp; tools</th><td>AWS S3 · GitHub Actions · Jira · Postman · JasperReports</td></tr>
+      <tr><th>Domains</th><td>HR &amp; payroll · insurance · e-invoicing (ZATCA) · e-commerce · ERP</td></tr>
+      <tr><th>Languages</th><td>Arabic (native) · English (fluent) · French (fluent)</td></tr>
+    </table>
+  </section>
+
+  <section id="contact" class="wrap">
+    <div class="contact">
+      <h2>Let's build something that lasts.</h2>
+      <p>Open to senior engineering roles, technical leadership, and consulting on enterprise systems for the MENA region and beyond.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:husseinkhatib88@gmail.com">Email me</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/hussein-khatib">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/husseinkhatib">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Hussein — Beirut, Lebanon · built by hand</footer>
+
+</body>
+</html>
